@@ -4,7 +4,7 @@ case "$1" in
 
 "sinusbot")
 	echo "Downloading SinusBot..."
-	wget -qO - https://www.sinusbot.com/pre/sinusbot-0.13.37-f7e9ece.tar.bz2 | tar xj
+	wget -qO - https://www.sinusbot.com/dl/sinusbot.current.tar.bz2 | tar xj
 	chmod +x sinusbot
 	cp config.ini.dist config.ini
 	sed -i "s|^TS3Path.*|TS3Path = \"\"|g" config.ini
@@ -14,7 +14,7 @@ case "$1" in
 "teamspeak")
 	echo "Installing TeamSpeak Client..."
 	# Get latest TeamSpeak client version
-	VERSION=$(wget -q -O - http://dl.4players.de/ts/releases/ | grep -Po '(?<=href=")[0-9]+(\.[0-9]+){2,3}(?=/")' | sort -Vr | head -1)
+	VERSION=3.1.9
 
 	# Download TeamSpeak client
 	echo "Downloading TeamSpeak Client v$VERSION..."

@@ -16,5 +16,5 @@ if [[ -v "${OVERRIDE_PASSWORD}" ]]; then
   echo "Using the --override-password flag"
   ./sinusbot --override-password="${OVERRIDE_PASSWORD}"
 else
-  ./sinusbot
+  LC_ALL="en_US.UTF-8" ./sinusbot
 fi
